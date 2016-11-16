@@ -33,4 +33,91 @@ Hopefully by now you've at least a vague understanding of what I mean when I say
 The commands we are going to learn are:  
 * cd
 * ls
+* pwd
 * nano
+* rm
+* touch
+* mkdir
+* man
+
+When you use the shell, you interact with it using something called a _terminal_. What's a terminal? It's the cool thing you see people in _The Matrix_ and other hacking movies use; you are prompted to input some letters, and the computer does what you want!  
+![xTerm](https://upload.wikimedia.org/wikipedia/commons/b/b3/Xterm_45.png?raw=true)
+
+The commands listed above will get you up-to-speed so that you can start maneuvering your server with ease; _trust me_, once you start you can become addicted! Let's jump in, shall we. It'd be best to have your terminal up and running.
+
+As I demonstrate commands for you to try, I'll be using a syntax like so: `$>___`. This means anything after the `>` I want you to input yourself into your terminal. :)
+
+### Commands
+* pwd
+ - print working directory
+ 
+ Most of you are familiar that in GUI Userland, you have a file system where you have your `Documents`, `Pictures`, `Music`, etc. folders. These folders are commonly called directories. Well, in the terminal, if you want to know where you are among your folders, you can `$> pwd`. Give it a go now.
+ 
+ Eg, 
+ `$> pwd`  
+ `$> /home/noah`
+ 
+ This means that I am in the subfolder of the folder `/home`. 
+ 
+ But what about looking at what's currently in your directory?
+ * ls
+  - list everything in your current directory  
+  
+  So, if I `$> ls`, I see that in my current folder I have: `Mail public_html sent`. These can be a mixture of directories and individual files. Take some time now messing about with these two commands and start picturing in your head that you're doing the same thing that's possible in GUI Userland.
+---
+But what if I want to move through these folders? 
+* cd
+ - change directory
+  
+  You can `$> cd` into other directories. You do this by typing the `cd` command and then an _argument_, or the value that the program/command will evaluate and manipulate for you. So by doing `cd <destination>`, you move into that destination! 
+
+```
+$> cd public_html
+$> ls
+$> index.html notes.txt
+```  
+ If I changed into my `public_html` folder, and then `ls` in that directory, I see that the shell returns _2_ files for me; `index.html` and `notes.txt`.  
+
+Now, what if I want to move back a directory? You simply `cd ..`. `..` Is the syntax that the terminal understand for meaning _move back one directory_. 
+
+```
+$> cd ..
+$> ls
+$> Mail public_html sent
+```
+
+Are you getting the hang of this now?
+
+So let's say you want to `cd` back multiple directories; simply add `/` in between the number of directories you want to change. Let's break this down. `cd ../..` means you want to `cd` _back_ two directories, and `cd ../../../..` means you want to `cd` back _four_. But what if you want to move _forward_ 4 directories?  
+`cd /path/to/your/destination`.  
+So this means that you simply have to append `/` in between the destination arguments that you are giving to `cd`.
+
+Lets say I have a directory structure as so:
+```
+/home/noah/
+          /       |           \
+    directory1  directory2  directory3
+      /   |    \
+  pics   music  pdfs
+        /    \
+     Sinatra  metal
+```
+Let's print our working directory. `$> pwd`. We get `/home/noah/`. _Perfect_. Let's just `ls` real fast and see what we're working with. `$> ls`.  
+`directory1 directory2 directory3`. _Brilliant_.  
+
+If I'm looking for all of my Sinatra tunes (ooooo', Franky!), then instead of `cd`ing a bunch of individual times, I can  
+`$> cd directory1/music/Sinatra`.  
+Let's `pwd`, and we get `/home/noah/directory1/music/Sinatra/.` Great!  
+```
+$> ls
+
+```  
+You see that blank stuff? It means I've got no files or folders. :( I forgot to upload my Sinatra mp3's to the server!!  
+Now let's just go back to `/home/noah/`.  
+```
+$> cd ../../..
+$> pwd
+$> /home/naltun
+```  
+
+You're doing great!
