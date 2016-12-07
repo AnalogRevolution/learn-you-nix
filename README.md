@@ -45,17 +45,17 @@ When you use the shell, you interact with it using something called a _terminal_
 
 The commands listed above will get you up-to-speed so that you can start maneuvering your server with ease; _trust me_, once you start you can become addicted! Let's jump in, shall we. It'd be best to have your terminal up and running.
 
-As I demonstrate commands for you to try, I'll be using a syntax like so: `$>___`. This means anything after the `>` I want you to input yourself into your terminal. :)
+As I demonstrate commands for you to try, I'll be using a syntax like so: `$___`. This means anything after the `>` I want you to input yourself into your terminal. :)
 
 ### Commands
 * pwd
  - print working directory
  
-Most of you are familiar that in GUI Userland, you have a file system where you have your `Documents`, `Pictures`, `Music`, etc. folders. These folders are commonly called directories. Well, in the terminal, if you want to know where you are among your folders, you can `$> pwd`. Give it a go now.
+Most of you are familiar that in GUI Userland, you have a file system where you have your `Documents`, `Pictures`, `Music`, etc. folders. These folders are commonly called directories. Well, in the terminal, if you want to know where you are among your folders, you can `$ pwd`. Give it a go now.
  
 Eg, 
-`$> pwd`  
-`$> /home/noah`
+`$ pwd`  
+`$ /home/noah`
  
 This means that I am in the subfolder of the folder `/home`. 
  
@@ -63,7 +63,7 @@ But what about looking at what's currently in your directory?
 * ls
  - list everything in your current directory  
   
-So, if I `$> ls`, I see that in my current folder I have: `Mail public_html sent`. These can be a mixture of directories and individual files. Take some time now messing about with these two commands and start picturing in your head that you're doing the same thing that's possible in GUI Userland.
+So, if I `$ ls`, I see that in my current folder I have: `Mail public_html sent`. These can be a mixture of directories and individual files. Take some time now messing about with these two commands and start picturing in your head that you're doing the same thing that's possible in GUI Userland.
 
 ---
 
@@ -71,21 +71,21 @@ But what if I want to move through these folders?
 * cd
  - change directory
   
-  You can `$> cd` into other directories. You do this by typing the `cd` command and then an _argument_, or the value that the program/command will evaluate and manipulate for you. So by doing `cd <destination>`, you move into that destination! 
+  You can `$ cd` into other directories. You do this by typing the `cd` command and then an _argument_, or the value that the program/command will evaluate and manipulate for you. So by doing `cd <destination>`, you move into that destination! 
 
 ```
-$> cd public_html
-$> ls
-$> index.html notes.txt
+$ cd public_html
+$ ls
+$ index.html notes.txt
 ```  
  If I changed into my `public_html` folder, and then `ls` in that directory, I see that the shell returns _2_ files for me; `index.html` and `notes.txt`.  
 
 Now, what if I want to move back a directory? You simply `cd ..`. `..` Is the syntax that the terminal understand for meaning _move back one directory_. 
 
 ```
-$> cd ..
-$> ls
-$> Mail public_html sent
+$ cd ..
+$ ls
+$ Mail public_html sent
 ```
 
 Are you getting the hang of this now?
@@ -104,22 +104,22 @@ Lets say I have a directory structure as so:
         /    \
      Sinatra  metal
 ```
-Let's print our working directory. `$> pwd`. We get `/home/noah/`. _Perfect_. Let's just `ls` real fast and see what we're working with. `$> ls`.  
+Let's print our working directory. `$ pwd`. We get `/home/noah/`. _Perfect_. Let's just `ls` real fast and see what we're working with. `$ ls`.  
 `directory1 directory2 directory3`. _Brilliant_.  
 
 If I'm looking for all of my Sinatra tunes (ooooo', Franky!), then instead of `cd`ing a bunch of individual times, I can  
-`$> cd directory1/music/Sinatra`.  
+`$ cd directory1/music/Sinatra`.  
 Let's `pwd`, and we get `/home/noah/directory1/music/Sinatra/.` Great!  
 ```
-$> ls
+$ ls
 
 ```  
 You see that blank stuff? It means I've got no files or folders. :( I forgot to upload my Sinatra mp3's to the server!!  
 Now let's just go back to `/home/noah/`.  
 ```
-$> cd ../../..
-$> pwd
-$> /home/naltun
+$ cd ../../..
+$ pwd
+$ /home/naltun
 ```  
 
 You're doing great!
@@ -128,33 +128,33 @@ You're doing great!
 
 Now let's say that I wanted to create a directory and add some files to it; it's straight-forward!
 ```
-$> touch <file>
-$> mkdir <direcotry>
+$ touch <file>
+$ mkdir <direcotry>
 ```
 
 Now, you use the `touch` command to create a file. And, the cool thing is, you can `touch` as many files as you want in one command; simply append as many arguments onto the `touch` command.
 
 Let's say I'm writing my autobiography and I want to create a few chapters as separate files:
-`$> touch ch.1 ch.2 ch.3`  
+`$ touch ch.1 ch.2 ch.3`  
 
 Now let's say that I want to add these files to a directory. Before we do that, we should create the directory to hold all of these chapters. For this, we can use to `mkdir` command. It follows the same conventions as `touch`.  
-`$> mkdir <directory_1> <directory_2>`  
+`$ mkdir <directory_1> <directory_2>`  
 
 Now, let's create that directory...  
-`$> mkdir life_of_noah`
+`$ mkdir life_of_noah`
 
 Now, you can make your`touch` and `mkdir` arguments a _path_ to the directory you'd like to `touch` or `mkdir`. First, let's make a new directory with `mkdir` in my `/public_html` folder.  
-`$> mkdir /home/noah/public_html/scripts`  
+`$ mkdir /home/noah/public_html/scripts`  
 
 Now let's `touch` a file in the new `/scripts` folder.  
-`$> touch /home/noah/public_html/scripts/date.js`
+`$ touch /home/noah/public_html/scripts/date.js`
 
 ---
 
 Let's `pwd` and see where we are.  
 ```
-$> pwd
-$> /home/naltun
+$ pwd
+$ /home/naltun
 ```
 
 Hmm. I decided that I want to remove that file that I `touch`'d in the `/scripts` directory. But how do I do that?
@@ -162,22 +162,22 @@ Hmm. I decided that I want to remove that file that I `touch`'d in the `/scripts
 * rm
  - remove a file or directory
  
-The `rm` command follows the same convention as other shell programs/commands; `$> command <argument1> <argument2> <etc...>`
+The `rm` command follows the same convention as other shell programs/commands; `$ command <argument1> <argument2> <etc...>`
 
 So let's `rm` that file.  
-`$> rm /public_html/scripts/date.js`  
+`$ rm /public_html/scripts/date.js`  
 
 Okay, great! Let's just double check that my `date.js` has been removed.
 ```
-$> ls /public_html/scripts
+$ ls /public_html/scripts
 
 ```  
 
 Perfect, we don't receive any output from our command! But I also decided that I want to scrap my `/scripts` directory altogether. How would I do that? Well, many commands have _pre_-arguments called _flag_. A _flag_ tells the command to manipulate the command or the arguments of the command in a very particular manner. Let's see what happens when we try to `rm` the `/scripts` directory.  
 
 ```
-$> cd /public_html
-$> rm /scripts
+$ cd /public_html
+$ rm /scripts
 rm: cannot remove 'scripts/': Is a directory
 ```  
 
@@ -186,12 +186,12 @@ What is this telling us? It's telling us that `rm` can't be used with a director
 * man
  - many commands have documentation called _manual pages_; use man to read the manual for a command
  
-`$> man rm`  
+`$ man rm`  
 
 Now using the `man` command can give you a _lot_ of information at once that can make you stressed; don't worry! The more you `man` the easier it gets to make sense of the information. Trust me, it's not that difficult; just take it slow and you'll understand what you're reading in _no time_! So, back to our terminal session.  
 
 ```
-$> man rm
+$ man rm
 ...
        -r, -R, --recursive
               remove directories and their contents recursively
@@ -201,12 +201,12 @@ $> man rm
 Okay, cool, so the `man`ual for `rm` tells us that we can use `-r, -R,` or `--recursive` as flags for our `rm` command to remove a directory. Flags come before the argument to a command. So, any idea how we'd remove our directory?
 
 ```
-$> pwd
+$ pwd
 /home/noah/public_html
-$> ls
+$ ls
 index.html /scripts
-$> rm -r /scripts
-$> ls
+$ rm -r /scripts
+$ ls
 index.html
 ```  
 
